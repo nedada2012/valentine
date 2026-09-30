@@ -1,0 +1,107 @@
+.menu{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 9999;
+    left:-100% ;
+    background-color: #2b2b2b;
+    transition: 300ms;
+    & nav{
+        width: inherit;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        & div{
+            width: inherit;
+            & a{
+                display: block;
+                width: 100%;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                text-decoration: none;
+                color: whitesmoke;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: bold;
+                font-size: 12px;
+                transition: 300ms;
+                &:hover{
+                    color: deeppink;
+                    background-color: #3b3b3b;
+                }
+            }
+        }
+    }
+}
+#menu,#close{
+    display: none;
+}
+label[for=menu]{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 99999;
+    left: 5px;
+    top: 5px;
+    background-color: whitesmoke;
+    border-radius: 3px;
+    cursor: pointer;
+    & div{
+        width: 80%;
+        height: 2px;
+        background-color: crimson;
+        position: absolute;
+    }
+    & div:nth-of-type(1){
+        left: calc(50% - 80%/2);
+        top: calc(50% - 2px/2 + 5px);
+    }
+     & div:nth-of-type(2){
+        left: calc(50% - 80%/2);
+        top: calc(50% - 2px/2 );
+    }
+     & div:nth-of-type(3){
+        left: calc(50% - 80%/2);
+        top: calc(50% - 2px/2 - 5px);
+    }
+}
+#menu:checked ~ .menu{
+    left: 0;
+}
+label[for=close]{
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 999;
+    left: 5px;
+    top: 5px;
+    background-color: whitesmoke;
+    border-radius: 3px;
+    cursor: pointer;
+    & div{
+        width: 80%;
+        height: 2px;
+        background-color: crimson;
+        position: absolute;
+    }
+    & div:nth-of-type(1){
+        left: calc(50% - 80%/2);
+        top: calc(50% - 2px/2);
+        transform: rotate(45deg);
+    }
+     & div:nth-of-type(2){
+        left: calc(50% - 80%/2);
+        top: calc(50% - 2px/2 );
+        transform: rotate(-45deg);
+    }
+   
+}
+#close:checked ~ .menu{
+    left: -100%;
+}
+#menu:checked ~ label[for=close]{
+    display: inline-block;
+}
+
