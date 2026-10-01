@@ -1,0 +1,15 @@
+footer{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    padding: 30px;
+    box-sizing: border-box;
+    gap: 10px;
+    .item{
+        width: 80%;
+        height: 250px;
+        background-color: #5b5b5b;
+    }
+}
